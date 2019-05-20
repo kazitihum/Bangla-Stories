@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { render } from 'react-dom';
-import playlist from './src/apis/playlist';
+import PlayList from './src/apis/PlayList';
+import { Switch, Route } from 'react-router-dom';
 import './style.css';
 
 class App extends Component {
@@ -16,7 +17,7 @@ class App extends Component {
   }
 
   VideoList() {
-    playlist.get('/playlistItems')
+    PlayList.get('/playlistItems')
       .then(response => {
         this.setState({ video: response.data.items });
       })
