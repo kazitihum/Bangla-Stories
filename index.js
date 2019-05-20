@@ -3,7 +3,6 @@ import { render } from 'react-dom';
 import axios from 'axios';
 // import Hello from './Hello';
 import './style.css';
-import ReactPlayer from 'react-player';
 
 class App extends Component {
   constructor(props) {
@@ -18,7 +17,7 @@ class App extends Component {
   }
 
   VideoList() {
-    axios.get('https://www.googleapis.com/youtube/v3/playlistItems?part=snippet%2CcontentDetails&maxResults=1&playlistId=PLq71IJk8mCV4-DqsZ7W6zRS7uzKOmmT8j&key=AIzaSyAFUNYmE1gfydRFrlb3Q05gXlPSgQmiY6I')
+    axios.get('playlistItems?playlistId=PLq71IJk8mCV4-DqsZ7W6zRS7uzKOmmT8j')
       .then(response => {
         this.setState({ video: response.data.items });
       })
@@ -35,7 +34,6 @@ class App extends Component {
               <h1 key={item.id}>{item.snippet.title}</h1>
           )}
         </div>
-        <ReactPlayer url='https://www.youtube.com/watch?v=ysz5S6PUM-U' playing />
       </div>
     );
   }
