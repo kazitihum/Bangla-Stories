@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { render } from 'react-dom';
-import axios from 'axios';
-// import Hello from './Hello';
+import playlist from './src/apis/playlist';
 import './style.css';
 
 class App extends Component {
@@ -17,7 +16,7 @@ class App extends Component {
   }
 
   VideoList() {
-    axios.get('playlistItems?playlistId=PLq71IJk8mCV4-DqsZ7W6zRS7uzKOmmT8j')
+    playlist.get('/playlistItems')
       .then(response => {
         this.setState({ video: response.data.items });
       })

@@ -4,8 +4,9 @@ const KEY = 'AIzaSyAFUNYmE1gfydRFrlb3Q05gXlPSgQmiY6I';
 export default axios.create({
     baseURL: 'https://www.googleapis.com/youtube/v3/',
     params: {
-        part: 'snippet%2CcontentDetails',
+        part: 'snippet',
         maxResults: 1,
-        key: KEY
+        key: KEY,
+        playlistId: 'PLq71IJk8mCV4-DqsZ7W6zRS7uzKOmmT8j'
     }
 })
